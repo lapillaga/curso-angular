@@ -1,1 +1,67 @@
-<h1>Hello World</h1>
+<p class="title">
+  Componente acumulador
+</p>
+<i class="fa fa-address-book"></i>
+<app-acumulador [contador]="10"
+                [acm]="3"
+                (evtClick)="insertLogAcumulador($event)"></app-acumulador>
+<app-acumulador [contador]="1320"
+                [acm]="321"
+                (evtClick)="insertLogAcumulador($event)"></app-acumulador>
+
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let log of logAcumulador">{{log}}</li>
+  </ul>
+</div>
+
+<!--<p class="title">Data Binding</p>-->
+<!--<p>-->
+<!--  Hola, {{ nombreEstudiante }}-->
+<!--</p>-->
+
+<!--<p class="title">Property binding</p>-->
+<!--<p>-->
+<!--  Mi edad es <span [innerHTML]="edadEstudiante"></span>-->
+<!--</p>-->
+
+<!--<p class="title">Event binding</p>-->
+<!--<button (click)="mostrarHora($event)">-->
+<!--  Mostrar hora-->
+<!--</button>-->
+<!--<p>{{horaActual}}</p>-->
+
+
+<!--<p class="title">Two-way binding</p>-->
+<!--<div>-->
+<!--  <label>Nombre</label>-->
+<!--  <input type="text" [(ngModel)]="nombreEstudiante">-->
+<!--</div>-->
+<!--<div>-->
+<!--  <label>Edad</label>-->
+<!--  <input type="text" [(ngModel)]="edadEstudiante">-->
+<!--</div>-->
+
+<!--<p class="title">Directivas NgIf, Else, NgFor</p>-->
+<!--<div>-->
+<!--  <p>NgIf - Else</p>-->
+<!--  <p *ngIf="edadEstudiante >= 18; else NoMayor">-->
+<!--    Eres mayor de edad-->
+<!--  </p>-->
+<!--  <ng-template #NoMayor>-->
+
+<!--  </ng-template>-->
+<!--</div>-->
+
+<!--<p class="title">Ng FOr - Ng Style</p>-->
+<!--<p *ngFor="let color of colors">-->
+<!--  <span [ngStyle]="{'background-color': color.color}">.</span>-->
+<!--  <span>{{color.redSocial}}</span>-->
+<!--</p>-->
+
+
+<!--<p class="title">Ng For - Ng Class</p>-->
+<!--<p *ngFor="let color of colors; let idx = index">-->
+<!--  <span [ngClass]="{ 'text-social': idx % 2 === 0 }">.</span>-->
+<!--  <span>{{color.redSocial}}</span>-->
+<!--</p>-->
