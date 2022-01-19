@@ -3,7 +3,7 @@
     <span>{{timeInSeconds * 1000 | date:'mm:ss'}}</span>
   </div>
   <div class="col-12 col-md-12 col-sm-12 col-lg-12 text-center pt-2">
-    <button class="btn btn-outline-primary"
+    <button class="btn btn-outline-primary text-success bg-white"
             (click)="play()" [disabled]="isPlaying">
       <i class="fa fa-play"></i>
     </button>
@@ -11,11 +11,11 @@
             (click)="pause()">
       <i class="fa fa-pause"></i>
     </button>
-    <button class="btn btn-outline-primary ms-2"
+    <button class="btn btn-outline-primary ms-2 text-danger  bg-white"
             (click)="stop()">
       <i class="fa fa-stop"></i>
     </button>
-    <button class="btn btn-outline-primary ms-2"
+    <button class="btn btn-outline-primary ms-2 text-warning bg-white"
             (click)="registerTime()">
       <i class="fa fa-stopwatch"></i>
     </button>
