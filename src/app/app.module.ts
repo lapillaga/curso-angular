@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import { AcumuladorComponent } from './acumulador/acumulador.component';
+import { CronometroComponent } from './cronometro/cronometro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AcumuladorComponent
+    AcumuladorComponent,
+    CronometroComponent
   ],
     imports: [
         BrowserModule,

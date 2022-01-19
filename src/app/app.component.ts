@@ -11,6 +11,7 @@ export class AppComponent {
   edadEstudiante: number = 23;
   horaActual: Date = new Date();
   logAcumulador: string[] = [];
+  timeStamps: number[] = [];
 
   colors: Color[] = [
     {
@@ -37,6 +38,13 @@ export class AppComponent {
     this.logAcumulador.push(log);
   }
 
+  addToTimeStamps($event: number) {
+    this.timeStamps.push($event);
+  }
+
+  clearTimeStamps() {
+    this.timeStamps = [];
+  }
 }
 
 interface Color {

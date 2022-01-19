@@ -1,19 +1,34 @@
-<p class="title">
-  Componente acumulador
-</p>
-<i class="fa fa-address-book"></i>
-<app-acumulador [contador]="10"
-                [acm]="3"
-                (evtClick)="insertLogAcumulador($event)"></app-acumulador>
-<app-acumulador [contador]="1320"
-                [acm]="321"
-                (evtClick)="insertLogAcumulador($event)"></app-acumulador>
-
-<div class="container">
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let log of logAcumulador">{{log}}</li>
-  </ul>
+<p class="title">Componente contador</p>
+<app-cronometro [minutes]="5"
+                [segundo]="23"
+                (markTime)="addToTimeStamps($event)"
+                (clearTimeLogs)="clearTimeStamps()"></app-cronometro>
+<div class="container text-center pt-2">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let time of timeStamps">
+        <span>Timer: </span>{{time * 1000 | date:'mm:ss'}}
+      </li>
+    </ul>
+  </div>
 </div>
+
+<!--<p class="title">-->
+<!--  Componente acumulador-->
+<!--</p>-->
+<!--<i class="fa fa-address-book"></i>-->
+<!--<app-acumulador [contador]="10"-->
+<!--                [acm]="3"-->
+<!--                (evtClick)="insertLogAcumulador($event)"></app-acumulador>-->
+<!--<app-acumulador [contador]="1320"-->
+<!--                [acm]="321"-->
+<!--                (evtClick)="insertLogAcumulador($event)"></app-acumulador>-->
+
+<!--<div class="container">-->
+<!--  <ul class="list-group">-->
+<!--    <li class="list-group-item" *ngFor="let log of logAcumulador">{{log}}</li>-->
+<!--  </ul>-->
+<!--</div>-->
 
 <!--<p class="title">Data Binding</p>-->
 <!--<p>-->
