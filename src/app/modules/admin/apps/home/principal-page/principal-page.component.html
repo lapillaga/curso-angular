@@ -10,3 +10,59 @@
   </div>
 </app-card>
 <button class="btn" appBtnLoading textInput="Listo para el loading">Presionar</button>
+
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
+
+<div [ngSwitch]="'CT'">
+  <div class="" *ngSwitchCase="'CT'">
+    Contenedor de cuentas
+  </div>
+  <div class="" *ngSwitchCase="'PD'">
+    Contenedor de producto
+  </div>
+  <div class="" *ngSwitchCase="'PR'">
+    Contenedor de perfil
+  </div>
+  <div class="" *ngSwitchDefault>
+    Por defecto
+  </div>
+</div>
+
+
+<p>Ejercicio sobre pipes</p>
+<h5>Date</h5>
+{{now | date:'short': 'es-ES'}}
+<p>{{now | date:'yyyy'}}</p>
+<h5></h5>
+
+Ejercicio para elegir zonas horarias en angular 2 y mostrar la fecha en español
+<p>{{now | date:'short': 'es-ES'}}</p>
+<p>{{now | date:'long': 'es-ES' | uppercase | slice: 0: 5}}</p>
+
+<input type="text" [(ngModel)]="search">
+<li *ngFor="let d of data | filterArray: search">
+  <ol>
+    {{d | json}}
+    {{d.name | uppercase}}
+    {{d.username | lowercase}}
+    {{d.name | titlecase | uppercase}}
+    {{d.saldo | currency: 'USD': 'code': '1.0-3'}}
+    {{d.percentage | percent}}
+    <p *ngFor="let item of (d | keyvalue | slice: 2: 4)">
+      {{item | json}}
+    </p>
+  </ol>
+</li>
