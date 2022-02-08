@@ -1,15 +1,15 @@
 <!-- Sidebar -->
-<div class="bg-white border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+<div class="bg-white border-right" id="sidebar-wrapper" [ngClass]="status ? 'hide' : 'show'">
   <div class="sidebar-heading">
     <img src="assets/img/bp.svg" width="200" height="50" alt="">
   </div>
   <div class="list-group list-group-flush">
-    <a href="#" class="list-group-item list-group-item-action bg-white">Dashboard</a>
-    <a href="#" class="list-group-item list-group-item-action bg-white">Shortcuts</a>
-    <a href="#" class="list-group-item list-group-item-action bg-white">Overview</a>
-    <a href="#" class="list-group-item list-group-item-action bg-white">Events</a>
-    <a href="#" class="list-group-item list-group-item-action bg-white">Profile</a>
-    <a href="#" class="list-group-item list-group-item-action bg-white">Status</a>
+    <a routerLink="/my-products" class="list-group-item list-group-item-action bg-white">Mis productos</a>
+    <a href="#" class="list-group-item list-group-item-action bg-white">Transferencias</a>
+    <a href="#" class="list-group-item list-group-item-action bg-white">Pagos</a>
+    <a href="#" class="list-group-item list-group-item-action bg-white">Solicitar productos</a>
+    <a href="#" class="list-group-item list-group-item-action bg-white">Otros servicios</a>
+    <a href="#" class="list-group-item list-group-item-action bg-white">Mis contactos</a>
   </div>
 </div>
 <!-- /#sidebar-wrapper -->
