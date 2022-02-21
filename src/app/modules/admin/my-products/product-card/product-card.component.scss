@@ -1,0 +1,23 @@
+.mat-card {
+  border-radius: 0 0 0 20px !important;
+  box-shadow: 0 0 0 0 !important;
+  border: 1px solid #e0e0e0 !important;
+  cursor: pointer;
+}
+
+.mat-card-header {
+  display: initial;
+}
+.mat-card .mat-divider-horizontal {
+  left: 5%;
+  width: 90%;
+}
+.mat-divider {
+  border-top: 2px solid rgba(255,221,0,1);
+}
+
+.card-content {
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}

@@ -1,1 +1,17 @@
-<h2>{{title | trim}}</h2>
+<div class="container">
+  <h2>{{title}}</h2>
+  <div class="row">
+    <div class="col-6">
+      <app-product-card (click)="selectProduct()"></app-product-card>
+    </div>
+    <div class="col-6">
+      <app-product-card (click)="selectProduct()"></app-product-card>
+    </div>
+  </div>
+  <h2 class="pt-5">Productos</h2>
+  <div class="row">
+    <div class="col-12">
+      <app-product-filter></app-product-filter>
+    </div>
+  </div>
+</div>

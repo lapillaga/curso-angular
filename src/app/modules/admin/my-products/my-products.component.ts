@@ -12,4 +12,7 @@ export class MyProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectProduct() {
+    console.log('Seleccionar producto');
+  }
 }

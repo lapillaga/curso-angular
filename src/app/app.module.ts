@@ -7,6 +7,8 @@ import {LayoutModule} from "./layout/layout.module";
 import {SharedModule} from "./shared/shared.module";
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     SharedModule,
     LayoutModule,
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
