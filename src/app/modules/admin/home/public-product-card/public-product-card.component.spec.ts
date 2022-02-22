@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PublicProductCardComponent } from './public-product-card.component';
+import { PublicProductCardComponent } from 'src/app/modules/admin/home/public-product-card/public-product-card.component';
 
 describe('PublicProductCardComponent', () => {
   let component: PublicProductCardComponent;

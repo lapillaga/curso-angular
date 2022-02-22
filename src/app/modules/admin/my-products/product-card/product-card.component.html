@@ -1,12 +1,12 @@
-<mat-card>
+<mat-card *ngIf="product">
   <mat-card-header class="w-100">
     <mat-card-title>
-      <div class="row pt-1 pb-1">
+      <div class="row pt-2 pb-2">
         <div class="col-6 d-flex justify-content-start">
-          <span>CA1</span>
+          <span>{{product.code}}</span>
         </div>
         <div class="col-6 d-flex justify-content-end">
-          <span>$29000</span>
+          <span>{{product.accountNumber}}</span>
         </div>
       </div>
     </mat-card-title>
@@ -18,15 +18,15 @@
         <span>Disponible</span>
       </div>
       <div class="col-6 d-flex justify-content-end">
-        <span>$29000</span>
+        <span>{{product.accountAvailable | currency}}</span>
       </div>
     </div>
-    <div class="row pt-1">
+    <div class="row pt-2">
       <div class="col-6 d-flex justify-content-start">
         <span>Contable</span>
       </div>
       <div class="col-6 d-flex justify-content-end">
-        <span>$29000</span>
+        <span>{{product.accountUsed | currency}}</span>
       </div>
     </div>
   </mat-card-content>

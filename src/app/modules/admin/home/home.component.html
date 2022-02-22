@@ -1,1 +1,20 @@
-<p>home works!</p>
+<div class="container">
+  <h2>Productos</h2>
+  <div class="row pb-4">
+    <div class="col-12">
+      <app-product-filter (selectedProductType)="reloadProducts($event)"></app-product-filter>
+    </div>
+  </div>
+  <div class="row" *ngIf='(products$ | async) as products; else loading'>
+    <ng-container *ngFor="let product of products">
+      <div class="col-6 col-sm-12 col-md-6 col-xl-6 col-lg-6 pt-2">
+        <app-public-product-card [publicProduct]="product"></app-public-product-card>
+      </div>
+    </ng-container>
+  </div>
+  <ng-template #loading>
+    <div class="align-self-center">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</div>

@@ -1,11 +1,14 @@
 <!-- Sidebar -->
 <div class="bg-white border-right" id="sidebar-wrapper" [ngClass]="status ? 'hide' : 'show'">
   <div class="sidebar-heading">
-    <img src="assets/img/bp.svg" width="200" height="50" alt="">
+    <a routerLink="/">
+      <img src="assets/img/bp.svg" width="200" height="50" alt="banco-logo.svg">
+    </a>
   </div>
   <div class="list-group list-group-flush">
-    <a routerLink="/my-products" routerLinkActive="active-bp" class="list-group-item list-group-item-action">Mis productos</a>
-    <a routerLink="/my-contacts" routerLinkActive="active-bp" class="list-group-item list-group-item-action">Mis contactos</a>
+    <a routerLink="/home" routerLinkActive="active-bp" [routerLinkActiveOptions]="{exact: true}" class="list-group-item list-group-item-action pt-3 pb-3">Inicio</a>
+    <a routerLink="/my-products" routerLinkActive="active-bp" class="list-group-item list-group-item-action pt-3 pb-3">Mis productos</a>
+    <a routerLink="/my-contacts" routerLinkActive="active-bp" class="list-group-item list-group-item-action pt-3 pb-3">Mis contactos</a>
   </div>
 </div>
 <!-- /#sidebar-wrapper -->

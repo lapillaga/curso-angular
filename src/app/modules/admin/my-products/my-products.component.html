@@ -1,17 +1,17 @@
 <div class="container">
-  <h2>{{title}}</h2>
-  <div class="row">
-    <div class="col-6">
-      <app-product-card (click)="selectProduct()"></app-product-card>
+  <ng-container *ngIf='(products$ | async) as products; else loading'>
+    <ng-container *ngFor="let product of products; let i = index;">
+      <h2 [ngClass]="{'pt-5': i !== 0}">{{product.account.name}}</h2>
+      <div class="row">
+        <div class="col-6" *ngFor="let account of product.products">
+          <app-product-card [product]="account" (click)="selectProduct(account)"></app-product-card>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+  <ng-template #loading>
+    <div class="align-self-center">
+      <mat-spinner></mat-spinner>
     </div>
-    <div class="col-6">
-      <app-product-card (click)="selectProduct()"></app-product-card>
-    </div>
-  </div>
-  <h2 class="pt-5">Productos</h2>
-  <div class="row">
-    <div class="col-12">
-      <app-product-filter></app-product-filter>
-    </div>
-  </div>
+  </ng-template>
 </div>

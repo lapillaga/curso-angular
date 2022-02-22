@@ -3,22 +3,24 @@ import { CommonModule } from '@angular/common';
 
 import { MyProductsRoutingModule } from './my-products-routing.module';
 import { MyProductsComponent } from './my-products.component';
-import { SharedModule } from "../../../shared/shared.module";
+import { SharedModule } from "src/app/shared/shared.module";
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { ProductCardComponent } from './product-card/product-card.component';
-import { ProductFilterComponent } from './product-filter/product-filter.component';
 import { MatRadioModule } from '@angular/material/radio';
-import { PublicProductCardComponent } from './public-product-card/public-product-card.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MovementsComponent } from './movements/movements.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
     MyProductsComponent,
     ProductCardComponent,
-    ProductFilterComponent,
-    PublicProductCardComponent
+    MovementsComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,12 @@ import { PublicProductCardComponent } from './public-product-card/public-product
     MatCardModule,
     MatButtonModule,
     MatDividerModule,
-    MatRadioModule
+    MatRadioModule,
+    MatProgressSpinnerModule,
+    MatExpansionModule,
+    MatListModule,
+    MatIconModule
   ]
 })
-export class MyProductsModule { }
+export class MyProductsModule {
+}

@@ -1,0 +1,23 @@
+<mat-card *ngIf="publicProduct">
+  <img class="product-image" mat-card-image [src]="publicProduct.image" [alt]="publicProduct.name">
+  <mat-card-content>
+    <h1>{{publicProduct.name}}</h1>
+    <p>{{publicProduct.description}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="row">
+      <div class="col-6 d-flex justify-content-start">
+        <div class="justify-content-center align-content-center">
+          <button mat-button class="align-middle link">Conoce más<mat-icon class="align-middle">keyboard_arrow_right</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+        <mat-chip-list aria-label="Fish selection">
+          <mat-chip color="primary" selected>En línea</mat-chip>
+        </mat-chip-list>
+      </div>
+    </div>
+
+  </mat-card-actions>
+</mat-card>

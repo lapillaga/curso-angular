@@ -1,28 +1,23 @@
+.product-image {
+  padding: 15px 15px 0 15px;
+}
+.mat-chip {
+  background-color: #009688 !important;
+}
+
 .mat-card {
   border-radius: 0 0 0 15px !important;
   box-shadow: 0 0 0 0 !important;
   border: 1px solid #e0e0e0 !important;
 }
 
-.mat-card-header {
-  display: initial;
-}
-.mat-card .mat-divider-horizontal {
-  left: 5%;
-  width: 90%;
-}
-.mat-divider {
-  border-top: 2px solid rgba(255,221,0,1);
-}
-
-.card-content {
-  padding-top: 5%;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
 .mat-card:hover {
   box-shadow: 0 16px 32px 0 rgba(0,0,0,0.9);
   border: 2px solid #e0e0e0 !important;
   cursor: pointer;
+}
+
+.link {
+  color: #2F7ABF;
+  font-size: 16px;
 }

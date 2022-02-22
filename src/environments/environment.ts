@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://api-curso-angular.herokuapp.com/'
+  apiBaseUrl: 'http://localhost:3000/'
 };
 
 /*

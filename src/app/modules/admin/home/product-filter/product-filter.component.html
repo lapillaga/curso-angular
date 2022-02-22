@@ -1,0 +1,6 @@
+<mat-radio-group aria-label="Select an option" (change)="changeType($event.value)">
+  <mat-radio-button value="" checked>Todos</mat-radio-button>
+  <mat-radio-button *ngFor="let type of productTypes$ | async" [value]="type.code">
+    {{type.name}}
+  </mat-radio-button>
+</mat-radio-group>
