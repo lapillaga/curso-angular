@@ -2,23 +2,33 @@
   <mat-card class="w-100">
     <div class="row">
       <div class="col-4">
+        <div class="w-100">
+          <mat-form-field appearance="outline"
+                          class="w-100">
+            <mat-icon class="mr-2" matPrefix>search</mat-icon>
+            <mat-label>Buscar</mat-label>
+            <input [formControl]="searchCtrl" matInput autocomplete="off" >
+          </mat-form-field>
+        </div>
+        <button class="w-100 button-add"
+                mat-raised-button (click)="createContact()">Agregar contacto</button>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
         <mat-selection-list #selectedContact [multiple]="false">
           <ng-container *ngFor="let contact of contacts">
             <mat-list-option [value]="contact">
-              <mat-icon mat-list-icon>person</mat-icon>
+              <div mat-list-avatar class="avatar-circle">
+                <span class="initials">{{getInitials(contact.recipient.names)}}</span>
+              </div>
               <h4 mat-line>{{contact.recipient.names | uppercase}}</h4>
               <p mat-line>{{contact.accountInfo.bankName | uppercase}}</p>
               <p mat-line>{{contact.accountInfo.number}}</p>
             </mat-list-option>
           </ng-container>
-
         </mat-selection-list>
-<!--        <mat-divider vertical style="height:400px;"></mat-divider>-->
       </div>
       <div class="col-8" *ngIf="selectedContact.selectedOptions.selected.length > 0">
-        <div class="row border-bottom">
-          <h3>{{selectedContact.selectedOptions.selected[0].value.recipient.names}}</h3>
-        </div>
+        <app-contact-info [contact]="selectedContact.selectedOptions.selected[0].value">
+        </app-contact-info>
       </div>
     </div>
   </mat-card>

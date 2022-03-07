@@ -24,6 +24,11 @@ export class MyProductsComponent implements OnInit {
   }
 
   selectProduct(account: ProductInfo) {
-    this.router.navigate(['movements', account.code], { relativeTo: this.activatedRoute });
+    this.router.navigate([
+      'movements',
+      account.code,
+      account.accountNumber,
+      account.accountAvailable
+    ], { relativeTo: this.activatedRoute });
   }
 }

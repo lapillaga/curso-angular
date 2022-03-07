@@ -1,0 +1,89 @@
+<h1 mat-dialog-title>Agregar contacto</h1>
+<div mat-dialog-content>
+  <form *ngIf="form" [formGroup]="form">
+    <ng-container formGroupName="accountInfo">
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre del banco</mat-label>
+          <mat-select required formControlName="bankCode">
+            <mat-option *ngFor="let bank of banks | async"
+                        [value]="bank.bankCode">
+              {{bank.bankName}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="accountInfo.get('bankCode')?.hasError('required')">
+            Campo requerido
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Número de cuenta</mat-label>
+          <input appOnlyNumbers autocomplete="off" matInput required formControlName="number">
+          <mat-error *ngIf="accountInfo.get('number')?.hasError('required')">
+            Campo requerido
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Tipo de cuenta</mat-label>
+          <mat-select required formControlName="type">
+            <mat-option *ngFor="let type of accountTypes | async"
+                        [value]="type.id">
+              {{type.description}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="accountInfo.get('type')?.hasError('required')">
+            Campo requerido
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </ng-container>
+    <ng-container formGroupName="recipient">
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombres</mat-label>
+          <input appInputUppercase autocomplete="off" matInput required formControlName="names">
+          <mat-error *ngIf="recipient.get('names')?.hasError('required')">
+            Campo requerido
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Cédula</mat-label>
+          <input appOnlyNumbers maxlength="10" #ced autocomplete="off" matInput required formControlName="idCard">
+          <mat-hint align="end">{{ced.value.length}}/10</mat-hint>
+          <mat-error *ngIf="recipient.get('names')?.hasError('required')">
+            Campo requerido
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Tipo de identificación</mat-label>
+          <mat-select required formControlName="identificationType">
+            <mat-option *ngFor="let type of idTypes | async"
+                        [value]="type.id">
+              {{type.description}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </ng-container>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Correo</mat-label>
+        <input autocomplete="off" matInput required formControlName="email">
+        <mat-error *ngIf="form.get('email')?.hasError('required')">
+          Campo requerido
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close="">CANCELAR</button>
+  <button mat-raised-button [disabled]="form?.invalid" (click)="saveForm()">GUARDAR</button>
+</div>

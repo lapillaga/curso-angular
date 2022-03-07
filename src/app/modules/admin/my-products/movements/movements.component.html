@@ -1,14 +1,30 @@
 <div class="container">
   <div class="row">
+    <mat-card class="w-100">
+      <mat-card-content>
+        <div class="row pt-2 pb-2">
+          <div class="col-6 d-flex justify-content-start">
+            <p>{{code}}</p>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+            <span>{{available  | currency}}</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
     <ng-container *ngIf="movements.length > 0">
-      <mat-list *ngFor="let m of group(); let i = index;">
-        <div mat-subheader>{{m.date}}</div>
-        <mat-list-item *ngFor="let t of m.movements">
-          <div mat-line>{{t.description}}</div>
-          <div mat-line> {{t.currentBalance}} </div>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-      </mat-list>
+      <mat-card class="mt-5">
+        <mat-card-content>
+          <mat-list *ngFor="let m of group(); let i = index;">
+            <div mat-subheader>{{m.date}}</div>
+            <mat-list-item *ngFor="let t of m.movements">
+              <div mat-line>{{t.description}}</div>
+              <div mat-line> {{t.currentBalance}} </div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
     </ng-container>
   </div>
   <ng-container *ngIf="movements.length === 0">

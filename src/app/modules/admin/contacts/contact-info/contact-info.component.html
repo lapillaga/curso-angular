@@ -1,0 +1,35 @@
+<div class="container" *ngIf="contact">
+  <div class="row border-bottom pt-3 pb-3">
+    <h2>{{contact.recipient.names}}</h2>
+  </div>
+  <div class="row pt-5">
+    <div class="col-12">
+      <p class="label-info">Tipo de identificación</p>
+      <p>{{contact.recipient.identificationType}}</p>
+    </div>
+  </div>
+  <div class="row pt-3">
+    <div class="col-12">
+      <p class="label-info">Número de identificación</p>
+      <p>{{contact.recipient.idCard}}</p>
+    </div>
+  </div>
+  <div class="row pt-3">
+    <div class="col-12">
+      <p class="label-info">Nombre del banco</p>
+      <p>{{contact.accountInfo.bankName}}</p>
+    </div>
+  </div>
+  <div class="row pt-3">
+    <div class="col-12">
+      <p class="label-info">Tipo de cuenta</p>
+      <p>{{contact.accountInfo.type}}</p>
+    </div>
+  </div>
+  <div class="row pt-3">
+    <div class="col-12">
+      <p class="label-info">Número de cuenta</p>
+      <p>{{contact.accountInfo.number}}</p>
+    </div>
+  </div>
+</div>

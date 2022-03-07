@@ -11,6 +11,9 @@ import { Transaction } from 'src/app/model/product';
 })
 export class MovementsComponent implements OnInit {
   movements: Transaction[] = [];
+  accountNumber: string = '';
+  code: string = '';
+  available: number = 0;
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService
@@ -20,7 +23,10 @@ export class MovementsComponent implements OnInit {
     this.activatedRoute.paramMap
       .pipe(
         switchMap(params => {
-          return this.productService.getMovements(params.get('id'));
+          this.code = params.get('id') || '';
+          this.accountNumber = params.get('number') || '';
+          this.available = Number(params.get('available')) || 0;
+          return this.productService.getMovements(this.code);
         })
       ).subscribe(response => {
         this.movements = response;
