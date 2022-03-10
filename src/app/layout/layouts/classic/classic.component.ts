@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactService } from 'src/app/shared/services/contact/contact.service';
-import { Contact } from 'src/app/model/contact';
 
 @Component({
   selector: 'app-classic',

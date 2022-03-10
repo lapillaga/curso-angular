@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
+import {AuthGuardService} from "./core/guard/auth-guard";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [AuthGuardService]
 })
 export class AppModule { }
